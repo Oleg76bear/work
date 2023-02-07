@@ -4,54 +4,48 @@
 //1) Куб (Все стороны равны).
 //2) Обычная коробка.
 //3) Конверт (Есть только длинна и ширина).
+
 package HomeTest;
 
-public class Work2_W2 {
+import by.itacademy.door.Box_25;
 
-    static class Box extends Throwable {
-        double width;
-        double height;
-        double depth;
+class Work2_W2 {
+    public static class Box {
+        int x;
+        int y;
+        int z;
 
-        public Box(double w, double h) {
-            width = w;
-            height = h;
+        public Box(int x) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            System.out.println("CUBE");
         }
 
-        public Box(double w, double h, double d) {
-            this.width = w;
-            this.height = h;
-            this.depth = d;
+        public Box(int x, int y) {
+            this.x = x;
+            this.y = y;
+            System.out.println("ENVELOP");
         }
 
-        // конструктор, используемый, когда ни один из размеров не указан
-        public Box() {
-            width = -1; // значение -1 используется для указания
-            height = -1; // неинициализированного
-            depth = -1; // параллелепипеда
+        public Box(int x, int y, int z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            System.out.println("RECTANGLE");
         }
 
-        // конструктор, используемый при создании куба
-        Box(double len) {
-            width = height = depth = len;
-        }
-
-        public void print() {
-            System.out.println(width + " " + height + " " + depth);
-        }
+        public static String className = "Box";
     }
 
+    public static void main(String[] args) {
 
-    public void main(String[] args) throws Box {
-        Box envelope = new Box(12, 4);
-        Box zerobox = new Box();
-        Box mybox = new Box(12, 34, 43);
-        Box mycube = new Box(7);
-
-      //  if (this.depth == 0) {
-            System.out.println("envelope" + envelope);
-        }
+        Box box = new Box(1);
+        Box box2 = new Box(4, 2);
+        Box box3 = new Box(4, 5, 8);
+        Box box4 = new Box(5, 6);
+        System.out.println(Box.className);
     }
-
+}
 
 
