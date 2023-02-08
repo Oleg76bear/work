@@ -1,4 +1,4 @@
-package by.itacademy.door;
+package by.itacademy.task;
 
 public class Students {
     String  name;

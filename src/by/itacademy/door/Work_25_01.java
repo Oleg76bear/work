@@ -1,4 +1,4 @@
-package by.itacademy.door;
+package by.itacademy.task;
 
 public class Work_25_01 {
     /*  public static void main(String[] args) {
