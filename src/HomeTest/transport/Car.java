@@ -1,9 +1,9 @@
 
 package HomeTest.transport;
-    public class Car implements Color, WheelSize {
+    public class Car  {
         private String colorCar;
         private String wheelSizeCar;
-
+        public String model;
         public Car(String model, int yearOfCar, int engineSizeCar, boolean sunroof, String colorCar, String wheelSizeCar) {
             super(model, yearOfCar, engineSizeCar, sunroof);
             this.colorCar = colorCar;
@@ -11,11 +11,12 @@ package HomeTest.transport;
         }
 
         public void setColorCar(String colorCar) {
-            if (model = "Audi") {
+
+            if (model == "Audi") {
                 System.out.println("Выберите цвет из : Синий, Красный или Зеленый");
-            } else if (model = "BMW") {
+            } else if (model == "BMW") {
                 System.out.println("Выберите цвет из : Оранжевый, Черный или Фиолетовый");
-            } else if (model = "KIA") {
+            } else if (model == "KIA") {
                 System.out.println("Выберите цвет из : Желтый, Cерый или Белый");
             } else {
                 System.out.println("На данный момент мы не можем Вам предложить другие варианты");
