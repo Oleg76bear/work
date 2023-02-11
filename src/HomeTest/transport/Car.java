@@ -1,21 +1,13 @@
 
 package HomeTest.transport;
-    public class Car extends Color, WheelSize {
+    public class Car implements Color, WheelSize {
         private String colorCar;
-        private int wheelSizeCar;
+        private String wheelSizeCar;
 
-        public Car(String model, int yearOfCar, int engineSizeCar, boolean sunroof, String colorCar, int wheelSizeCar) {
+        public Car(String model, int yearOfCar, int engineSizeCar, boolean sunroof, String colorCar, String wheelSizeCar) {
             super(model, yearOfCar, engineSizeCar, sunroof);
             this.colorCar = colorCar;
             this.wheelSizeCar = wheelSizeCar;
-        }
-
-        public void levelColor() {
-            this.colorCar;
-        }
-
-        public void levelSize() {
-            this.wheelSizeCar;
         }
 
         public void setColorCar(String colorCar) {
@@ -38,7 +30,7 @@ package HomeTest.transport;
             this.colorCar = colorCar;
         }
 
-        public int getWheelSizeCar() {
+        public String getWheelSizeCar() {
             return wheelSizeCar;
         }
 
