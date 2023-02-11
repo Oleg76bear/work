@@ -1,23 +1,23 @@
 package HomeTest.transport;
 
 public enum WheelSize {
-    ENUM_SIZE3("13 дюймов"),
-    ENUM_SIZE14("14 дюймов"),
-    ENUM_SIZE15("15 дюймов"),
-    ENUM_SIZE16("16 дюймов"),
-    ENUM_SIZE17("17 дюймов"),
-    ENUM_SIZE18("18 дюймов"),
-    ENUM_SIZE19("19 дюймов"),
-    ENUM_SIZE20("20 дюймов"),
-    ENUM_SIZE21("21 дюймов"),
-    ENUM_SIZE22("22 дюймов");
+    ENUM_SIZE3("13 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE14("14 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE15("15 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE16("16 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE17("17 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE18("18 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE19("19 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE20("20 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE21("21 РґСЋР№РјРѕРІ"),
+    ENUM_SIZE22("22 РґСЋР№РјРѕРІ");
 
 
    private final String wheelSizeCar;
     WheelSize(String wheelSizeCar) {
         this.wheelSizeCar = wheelSizeCar;
 
-        System.out.println("Ваш автомобиль  с цветом " + this.wheelSizeCar + " правильно?");
+        System.out.println("Р’Р°С€ Р°РІС‚РѕРјРѕР±РёР»СЊ  СЃ С†РІРµС‚РѕРј " + this.wheelSizeCar + " РїСЂР°РІРёР»СЊРЅРѕ?");
     }
 
     public String getWheelSizeCar() {

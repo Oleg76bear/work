@@ -1,15 +1,15 @@
 package HomeTest.transport;
 
 public enum Color {
-    BLUE("Синий"),
-    RED("Красный"),
-    GREEN("Зеленый"),
-    ORANGE("Оранжевый"),
-    BLACK("Черный"),
-    VIOLET("Фиолентовый"),
-    YELLOW("Желтый"),
-    WHITE("Белый"),
-    GRAY("Серый");
+    BLUE("РЎРёРЅРёР№"),
+    RED("РљСЂР°СЃРЅС‹Р№"),
+    GREEN("Р—РµР»РµРЅС‹Р№"),
+    ORANGE("РћСЂР°РЅР¶РµРІС‹Р№"),
+    BLACK("Р§РµСЂРЅС‹Р№"),
+    VIOLET("Р¤РёРѕР»РµРЅС‚РѕРІС‹Р№"),
+    YELLOW("Р–РµР»С‚С‹Р№"),
+    WHITE("Р‘РµР»С‹Р№"),
+    GRAY("РЎРµСЂС‹Р№");
 
 
      private final String colorCar;
@@ -17,7 +17,7 @@ public enum Color {
       Color(String colorCar) {
           this.colorCar = colorCar;
 
-          System.out.println("Ваш автомобиль  с цветом " + this.colorCar + " правильно?");
+          System.out.println("Р’Р°С€ Р°РІС‚РѕРјРѕР±РёР»СЊ  СЃ С†РІРµС‚РѕРј " + this.colorCar + " РїСЂР°РІРёР»СЊРЅРѕ?");
       }
 
       public String getColorCar() {
