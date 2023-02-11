@@ -1,10 +1,7 @@
 
 package HomeTest.transport;
-    public class Car  {
-        private String model;
-        private  int yearOfCar;
-        private int engineSizeCar;
-        boolean  sunroof;
+    public class Car extends ImmutableParametr {
+
         private String colorCar;
         private String wheelSizeCar;
 
