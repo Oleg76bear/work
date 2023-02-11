@@ -11,23 +11,15 @@ package HomeTest.transport;
         }
 
         public void setColorCar(String colorCar) {
-        if(model ="Audi") {
-            System.out.println("Выберите цвет из : Синий, Красный или Зеленый");
-        } else if(model ="BMW")
-
-        {
-            System.out.println("Выберите цвет из : Оранжевый, Черный или Фиолетовый");
-        } else if(model ="KIA")
-
-        {
-            System.out.println("Выберите цвет из : Желтый, Cерый или Белый");
-        } else
-
-        {
-            System.out.println("На данный момент мы не можем Вам предложить другие варианты");
-        }
-
-            this.colorCar = colorCar;
+            if (model = "Audi") {
+                System.out.println("Выберите цвет из : Синий, Красный или Зеленый");
+            } else if (model = "BMW") {
+                System.out.println("Выберите цвет из : Оранжевый, Черный или Фиолетовый");
+            } else if (model = "KIA") {
+                System.out.println("Выберите цвет из : Желтый, Cерый или Белый");
+            } else {
+                System.out.println("На данный момент мы не можем Вам предложить другие варианты");
+            }
         }
 
         public String getWheelSizeCar() {
