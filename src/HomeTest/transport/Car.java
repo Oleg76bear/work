@@ -1,9 +1,13 @@
 
 package HomeTest.transport;
     public class Car  {
+        private String model;
+        private  int yearOfCar;
+        private int engineSizeCar;
+        boolean  sunroof;
         private String colorCar;
         private String wheelSizeCar;
-        public String model;
+
         public Car(String model, int yearOfCar, int engineSizeCar, boolean sunroof, String colorCar, String wheelSizeCar) {
             super(model, yearOfCar, engineSizeCar, sunroof);
             this.colorCar = colorCar;
