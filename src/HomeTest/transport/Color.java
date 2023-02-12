@@ -12,34 +12,14 @@ public enum Color {
     GRAY("Серый");
 
 
-     private final String colorCar;
+    private final String colorCar;
 
-      Color(String colorCar) {
-          this.colorCar = colorCar;
-
-          System.out.println("Ваш автомобиль  с цветом " + this.colorCar + " правильно?");
-      }
-
-      public String getColorCar() {
-          return colorCar;
-      }
-  }
-
-
-  /*  private static final List<String> Colors;
-    private final String color;
-
-    static {
-        Colors = new ArrayList<>();
-        for (WheelSize wheelSize : WheelSize.colors()) {
-            Colors.add(wheelSize.color);
-        }
+    Color(String colorCar) {
+        this.colorCar = colorCar;
     }
 
-    private Color(String color) {
-        this.color = color;
+    public String getColorCar() {
+        return colorCar;
     }
 }
-
-     */
 

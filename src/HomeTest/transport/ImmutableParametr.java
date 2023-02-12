@@ -1,31 +1,15 @@
 package HomeTest.transport;
 
 public class ImmutableParametr {
-    protected String model;
+    protected final String model;
     private  int yearOfCar;
-    private int engineSizeCar;
+    private float engineSizeCar;
     boolean sunroof;
 
-    public ImmutableParametr(String model, int yearOfCar, int engineSizeCar, boolean sunroof) {
+    public ImmutableParametr(String model, int yearOfCar, float engineSizeCar, boolean sunroof) {
         this.model = model;
         this.yearOfCar = yearOfCar;
         this.engineSizeCar = engineSizeCar;
-        this.sunroof = sunroof;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setYearOfCar(int yearOfCar) {
-        this.yearOfCar = yearOfCar;
-    }
-
-    public void setEngineSizeCar(int engineSizeCar) {
-        this.engineSizeCar = engineSizeCar;
-    }
-
-    public void setSunroof(boolean sunroof) {
         this.sunroof = sunroof;
     }
 

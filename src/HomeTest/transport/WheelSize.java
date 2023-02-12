@@ -13,39 +13,13 @@ public enum WheelSize {
     ENUM_SIZE22("22 дюймов");
 
 
-   private final String wheelSizeCar;
+    private final String wheelSizeCar;
+
     WheelSize(String wheelSizeCar) {
         this.wheelSizeCar = wheelSizeCar;
-
-        System.out.println("Ваш автомобиль  с цветом " + this.wheelSizeCar + " правильно?");
     }
 
     public String getWheelSizeCar() {
         return wheelSizeCar;
     }
 }
-
-
-/*
-    private static final List<String> SIZES;
-    private final String size;
-
-    static {
-        SIZES = new ArrayList<>();
-        for (WheelSize wheelSize : WheelSize.sizes()) {
-            SIZES.add(wheelSize.size);
-        }
-    }
-
-    private WheelSize(String size) {
-        this.size = size;
-    }
-
-    public static List<String> getSizes() {
-        return unmodifiableList(SIZES);
-    }
-
-    List<String> sizes = WheelSize.getSizes();
-}
-
- */
