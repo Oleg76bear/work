@@ -6,10 +6,19 @@ class Phone {
     private int weight;
 
 
+
+    public void setNamber(String namber) {
+        this.namber = namber;
+    }
+
     public Phone(String namber, String model, int weight) {
         this.namber = namber;
         this.model = model;
         this.weight = weight;
+    }
+
+    public String getNamber() {
+        return namber;
     }
 
     public void print() {
@@ -21,6 +30,7 @@ class Phone {
         Phone iPhone = new Phone("3454343", "14 Pro Max", 565);
         Phone samsung = new Phone("5655464", "S 22", 557);
         Phone nokia = new Phone("7688864", "Max", 547);
+
 
         iPhone.print();
         samsung.print();
