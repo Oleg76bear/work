@@ -3,8 +3,7 @@ public  class PhoneHome {
         private int number;
         private String model;
         private int weight;
-
-        String name = "Роман";
+       String name = "Роман";
 
         public void receiveCall() {
             System.out.println("Звонит " + name);
@@ -15,10 +14,17 @@ public  class PhoneHome {
         public void getNumber() {
             System.out.println(number);
             }
-        public void sendMessage(int number1, int number2) {
-            System.out.println( number1 + "\t" + number2);
+    //   public void sendMessage(int number1, int number2) {
+     //       System.out.println( number1 + "\t" + number2);
+    //        }
+    //     public class sendMessage {
+        static void sendMessage(int... array) {
+            System.out.println("Количество аргументов: " + array.length);
+            for (int a : array) {
+                System.out.print(a + " ");
             }
-
+            System.out.println();
+        }
         public String getModel() {
             return model;
             }
