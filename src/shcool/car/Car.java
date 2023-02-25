@@ -115,7 +115,16 @@ public enum Year {
         System.out.println();
     }
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model=" + model +
+                ", year=" + year +
+                ", engineVolume=" + engineVolume +
+                ", color=" + color +
+                ", wheelSize=" + wheelSize +
+                '}';
+    }
     public static void main(String[] args) {
         Car car = new Car(Color.BLUE, Car.Model.AUDI, Year.YEAR_2020, WheelSize.SIZE_15, Car.EngineVolume.V4_1_6);
         car.addOption(Car.Option.LEATHER_SEATS);
