@@ -9,51 +9,24 @@ public class Car {
 
     private final Color color;
     private final Model model;
-    private final Year year;
+    private   Year year;
     private final WheelSize wheelSize;
     private final EngineVolume engineVolume;
     private List<Option> options;
-public enum Color{
-    RED,
-    BLUE,
-    GREEN,
-    BLACK,
-    WHITE,
-}
-    public enum Model {
-        AUDI,
-        BMW,
-        MERCEDES,
-        TOYOTA,
-        HONDA,
-    }
-public enum WheelSize {
-    SIZE_15,
-    SIZE_16,
-    SIZE_17,
-    SIZE_18,
-    SIZE_19,
-    SIZE_20,
-}
-    public enum EngineVolume {
-        V4_1_6,
-        V4_2_0,
-        V6_3_0,
-        V8_4_0,
-    }
-public enum Year {
-    YEAR_2020,
-    YEAR_2021,
-    YEAR_2022,
-}
-    public enum Option {
-        NAVIGATION,
-        SUNROOF,
-        LEATHER_SEATS,
-        PARK_ASSIST,
+
+
+    public Car(Color color, Model model,  WheelSize wheelSize, EngineVolume engineVolume) {
+        this.color = color;
+        this.model = model;
+
+        this.wheelSize = wheelSize;
+        this.engineVolume = engineVolume;
+        this.options = new ArrayList<>();
     }
 
-    public Car( Color color, Model model, Year year, WheelSize wheelSize, EngineVolume engineVolume) {
+
+
+    public Car(Color color, Model model, Year year, WheelSize wheelSize, EngineVolume engineVolume) {
         this.color = color;
         this.model = model;
         this.year = year;
@@ -61,6 +34,7 @@ public enum Year {
         this.engineVolume = engineVolume;
         this.options = new ArrayList<>();
     }
+
 
     public Color getColor() {
         return color;
@@ -89,7 +63,9 @@ public enum Year {
     public EngineVolume getEngineVolume() {
         return engineVolume;
     }
-
+    public EngineVolume setEngineVolume(EngineVolume engineVolume) {
+        return engineVolume;
+    }
     public List<Option> getOptions() {
         return options;
     }
@@ -105,7 +81,7 @@ public enum Year {
     public void printInfo() {
         System.out.println("Model: " + model);
         System.out.println("Color: " + color);
-        System.out.println("Year: " + year);
+      //  System.out.println("Year: " + year);
         System.out.println("Wheel Size: " + wheelSize);
         System.out.println("Engine Volume: " + engineVolume);
         System.out.print("Options: ");
@@ -125,13 +101,28 @@ public enum Year {
                 ", wheelSize=" + wheelSize +
                 '}';
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof Car)) {
+            return false;
+        }
+        Car other = (Car) obj;
+        return this.color == other.color &&
+                this.model == other.model &&
+                this.wheelSize == other.wheelSize &&
+                this.engineVolume == other.engineVolume &&
+                this.options.equals(other.options);
+    }
     public static void main(String[] args) {
-        Car car = new Car(Color.BLUE, Car.Model.AUDI, Year.YEAR_2020, WheelSize.SIZE_15, Car.EngineVolume.V4_1_6);
-        car.addOption(Car.Option.LEATHER_SEATS);
-        car.addOption(Car.Option.NAVIGATION);
+        Car car = new Car(Color.BLUE, Model.AUDI,Year.YEAR_2022, WheelSize.SIZE_15, EngineVolume.V4_1_6);
+        car.addOption(Option.LEATHER_SEATS);
+        car.addOption(Option.NAVIGATION);
         car.printInfo();
         car.setWheelSize(WheelSize.SIZE_19);
-        car.removeOption(Car.Option.NAVIGATION);
+        car.removeOption(Option.NAVIGATION);
         car.printInfo();
     }
 }
