@@ -5,4 +5,7 @@ public enum Option {
     SUNROOF,
     LEATHER_SEATS,
     PARK_ASSIST,
+    HEATED_SEATS,
+    PARKING_ASSIST,
+    BACKUP_CAMERA,
 }

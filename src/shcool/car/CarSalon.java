@@ -1,25 +1,53 @@
 package shcool.car;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
+
 public class CarSalon {
-    private final CarFactory factory;
-    private final List<Car> cars;
+    private List<Car> cars;
 
-    public CarSalon(CarFactory factory) {
-        this.factory = factory;
-        this.cars = new ArrayList<>();
+    public CarSalon() {
+        cars = new ArrayList<>();
     }
 
-    public Car orderCar(Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize) {
-        Car car = factory.createCar(model, engineVolume, color, wheelSize);
+    public void addCar(Car car) {
         cars.add(car);
-        return car;
     }
 
+    public void removeCar(Car car) {
+        cars.remove(car);
+    }
+
+    public void paintWheel(Car car, Color wheelPaintColor) {
+        if (car == null) {
+            return;
+        }
+        for (Car.Wheel wheel : car.getWheelSize().getWheels()) {
+            wheel.setColor(wheelPaintColor);
+        }
+    }
+
+    public void printCars() {
+        if (cars.isEmpty()) {
+            System.out.println("No cars in the salon.");
+        } else {
+            for (Car car : cars) {
+                car.printInfo();
+            }
+        }
+    }
+
+    public List<Car> getCarsByModel(Model model) {
+        List<Car> result = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getModel() == model) {
+                result.add(car);
+            }
+        }
+        return result;
+    }
     public void printInventory() {
         System.out.println("Комплектация:");
         for (Car car : cars) {
@@ -43,29 +71,19 @@ public class CarSalon {
     }
 
     public static void main(String[] args) {
-        CarFactory factory = new CarFactory(
-                new ArrayList<>(Arrays.asList(Model.TOYOTA, Model.AUDI, Model.HONDA)),
+        CarSalon salon = new CarSalon();
+        Car car1 = new Car(Color.BLUE, Model.AUDI, "2022", WheelSize.SIZE_15, EngineVolume.V4_1_6);
+        car1.addOption(Option.LEATHER_SEATS);
+        car1.addOption(Option.NAVIGATION);
+        salon.addCar(car1);
 
-                new ArrayList<>(Arrays.asList(EngineVolume.V4_1_6, EngineVolume.V6_3_0, EngineVolume.V8_4_0)),
-                new ArrayList<>(Arrays.asList(Color.BLUE, Color.RED, Color.BLACK)),
-                new ArrayList<>(Arrays.asList(WheelSize.SIZE_16, WheelSize.SIZE_18, WheelSize.SIZE_19))
-        );
-        CarSalon salon = new CarSalon(factory);
+        Car car2 = new Car(Color.RED, Model.BMW, "2023", WheelSize.SIZE_18, EngineVolume.V6_2_0);
+        car2.addOption(Option.PARKING_ASSIST);
+        salon.addCar(car2);
 
-        System.out.println("Заказ новых автомобилей...");
-        Car car1 = salon.orderCar(Model.AUDI, EngineVolume.V6_3_0,  Color.BLACK, WheelSize.SIZE_19);
-        Car car2 = salon.orderCar(Model.TOYOTA, EngineVolume.V6_3_0,  Color.BLACK, WheelSize.SIZE_19);
-        Car car3 = salon.orderCar(Model.HONDA, EngineVolume.V4_1_6, Color.BLUE, WheelSize.SIZE_16);
-
-        System.out.println("Комплектация после заказа:");
-        salon.printInventory();
-
-        System.out.println("Сервис существующих автомобилей...");
-        salon.serviceCar(car1, EngineVolume.V8_4_0, Color.RED, null);
-        salon.serviceCar(car2, null, Color.BLUE, WheelSize.SIZE_18);
-
-        System.out.println("Комплектация после сервиса:");
-        salon.printInventory();
+        salon.printCars();
+        salon.paintWheel(car1, Color.GREEN);
+        System.out.println("After painting the wheels:");
+        salon.printCars();
     }
 }
-
