@@ -6,7 +6,7 @@ import HomeTest.transport.Color;
 
 import java.util.ArrayList;
 
-public  class ElectricCar extends Transport.Car {
+public  class ElectricCar extends Car {
     private int batteryCapacity;
 
     public ElectricCar(Color colorCar, String model, int year, double engineVolume, WheelSize wheelSize, int batteryCapacity) {

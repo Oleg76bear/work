@@ -7,14 +7,14 @@ import HomeTest.transport.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Transport {
-    public static class Car {
+    public class Car {
         private Color colorCar;
         private String model;
         private int year;
         private double engineVolume;
         private WheelSize wheelSize;
         private List<CarOption> options;
+
 
         public Car(Color colorCar, String model, int year, double engineVolume, WheelSize wheelSize, List<CarOption> options) {
             this.model = model;
@@ -23,7 +23,7 @@ public class Transport {
             this.wheelSize = wheelSize;
             this.options = options != null ? options : new ArrayList<>();
             if (colorCar == null) {
-                 colorCar = Color.values()[0];
+                colorCar = Color.values()[0];
             }
             this.colorCar = colorCar;
         }
@@ -56,8 +56,16 @@ public class Transport {
             return String.format("%s %s (%d), %.1fL, %s wheels, Options: %s",
                     colorCar.getColorCar(), model, year, engineVolume, wheelSize.name(), optionsStr);
         }
+
+        public Color getColor() {
+            return colorCar;
+        }
+
+        public void setColor(Color color) {
+            this.colorCar = colorCar;
+        }
+
     }
-}
 
 //
 //        public String toString() {
