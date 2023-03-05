@@ -15,9 +15,9 @@ public class One {
                 String input = scanner.nextLine();
 
                 // Проверка наличия цифр, символов или пробелов в строке
-                if (input.matches("[^\\w\\s]*") || input.matches("[\\d\\s]*")) {
-                    throw new IllegalArgumentException("Введена некорректная строка!");
-                }
+                //     if (input.matches("[^\\w\\s]*") || input.matches("[\\d\\s]*")) {
+             //       throw new IllegalArgumentException("Введена некорректная строка!");
+            //    }
 
                 System.out.println("Вы ввели: " + input);
             } catch (IllegalArgumentException e) {

@@ -8,31 +8,63 @@ package HomeTest.testFives;
 import java.util.Scanner;
 
 public class Two {
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int sum = 0;
+//        int count = 0;
+//        while (true) {
+//            System.out.print("Введите число или \"stop\" для завершения: ");
+//            String input = scanner.nextLine();
+//            if (input.equals("stop")) {
+//                break;
+//            } else {
+//                try {
+//                    int num = Integer.parseInt(input);
+//                    sum += num;
+//                    count++;
+//                } catch (NumberFormatException e) {
+//                    System.out.println("Ошибка: введено некорректное значение!");
+//                }
+//            }
+//        }
+//        if (count > 0) {
+//            double average = (double) sum / count;
+//            System.out.println("Среднее значение: " + average);
+//        } else {
+//            System.out.println("Нет введенных значений.");
+//        }
+//    }
+//}
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
         int count = 0;
+
         while (true) {
             System.out.print("Введите число или \"stop\" для завершения: ");
             String input = scanner.nextLine();
             if (input.equals("stop")) {
                 break;
-            } else {
-                try {
-                    int num = Integer.parseInt(input);
-                    sum += num;
-                    count++;
-                } catch (NumberFormatException e) {
-                    System.out.println("Ошибка: введено некорректное значение!");
-                }
+            }
+            Integer num = null;
+            try {
+                num = Integer.valueOf(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: введено не число");
+            }
+            if (num != null) {
+                sum += num;
+                count++;
             }
         }
-        if (count > 0) {
+        if (count == 0) {
+            System.out.println("Нет чисел для вычисления среднего");
+        } else {
             double average = (double) sum / count;
             System.out.println("Среднее значение: " + average);
-        } else {
-            System.out.println("Нет введенных значений.");
         }
     }
 }
+
 

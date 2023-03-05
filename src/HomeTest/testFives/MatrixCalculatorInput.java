@@ -1,6 +1,6 @@
 // Необходимо написать программу считающую сумму и разность двух
 //квадратных матриц. Матрицы необходимо считывать из файла (INPUT).
-//Матрицы в фаиле хранятся в следующем виде:
+//Матрицы в файле хранятся в следующем виде:
 //3 3
 //1 2 3
 //1 2 3
@@ -20,12 +20,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class MatrixCalculatorInput  {
+public class MatrixCalculatorInput {
 
     private static final String FILE_NAME = "C:\\Users\\Олег\\IdeaProjects\\work\\src\\HomeTest\\testFives\\Matrix";
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException{
-               try {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        try {
 
             // Открытие файла для чтения
             File file = new File(FILE_NAME);
@@ -34,11 +34,18 @@ public class MatrixCalculatorInput  {
             // Считывание размерности первой матрицы
             int rows1 = scanner.nextInt();
             int cols1 = scanner.nextInt();
-                   // Проверка возможности вычислений
-                   if (rows1 != cols1 ) {
-                       System.out.println("Ошибка: размерности матриц не совпадают");
-                       return;
-                   }
+
+            // Проверка возможности вычислений
+            if (rows1 <= 0 || cols1 <= 0) {
+                System.out.println("Ошибка: размер матрицы должен быть положительным числом.");
+                return;
+            }
+
+            if (rows1 != cols1) {
+                System.out.println("Ошибка: размерности матриц не совпадают");
+                return;
+            }
+
             // Считывание первой матрицы
             int[][] matrix1 = new int[rows1][cols1];
             for (int i = 0; i < rows1; i++) {
