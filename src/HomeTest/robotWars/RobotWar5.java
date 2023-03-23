@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RobotWar5 {
     private static final int REQUIRED_ROBOTS = 20;
-    private static final int MAX_TRIES = 100; // Исключаю вечный цикл.
+    private static final int MAX_TRIES = 100; // РСЃРєР»СЋС‡Р°СЋ РІРµС‡РЅС‹Р№ С†РёРєР».
     private static final int PRODUCTION_TIME = 5000; // 5 seconds
     private static final int BODY_PARTS = 6;
     private static final int ARMY_SIZE = 2;
@@ -17,41 +17,41 @@ public class RobotWar5 {
     private static Random rand = new Random();
 
     public static void main(String[] args) {
-        // Запускаем производство деталей на заводе
+        // Р—Р°РїСѓСЃРєР°РµРј РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ РґРµС‚Р°Р»РµР№ РЅР° Р·Р°РІРѕРґРµ
         for (int i = 0; i < BODY_PARTS; i++) {
-            partsOnFactory[i] = rand.nextInt(5) + 1; // Случайные числа от 1 до 5
+            partsOnFactory[i] = rand.nextInt(5) + 1; // РЎР»СѓС‡Р°Р№РЅС‹Рµ С‡РёСЃР»Р° РѕС‚ 1 РґРѕ 5
         }
 
-        // Начать войну
+        // РќР°С‡Р°С‚СЊ РІРѕР№РЅСѓ
         int tries = 0;
         while (true) {
-            // Проверяет, достигла ли какая-либо страна необходимого количества роботов
+            // РџСЂРѕРІРµСЂСЏРµС‚, РґРѕСЃС‚РёРіР»Р° Р»Рё РєР°РєР°СЏ-Р»РёР±Рѕ СЃС‚СЂР°РЅР° РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° СЂРѕР±РѕС‚РѕРІ
             for (int i = 0; i < ARMY_SIZE; i++) {
                 if (getArmySize(i) >= REQUIRED_ROBOTS) {
-                    System.out.println(COUNTRIES[i] + " выиграла войну!");
+                    System.out.println(COUNTRIES[i] + " РІС‹РёРіСЂР°Р»Р° РІРѕР№РЅСѓ!");
                     System.exit(0);
                 }
             }
 
-            // Проверьте, достигнуто ли максимальное количество попыток
+            // РџСЂРѕРІРµСЂСЊС‚Рµ, РґРѕСЃС‚РёРіРЅСѓС‚Рѕ Р»Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє
             if (tries >= MAX_TRIES) {
-                System.out.println("Война закончилась вничью.");
+                System.out.println("Р’РѕР№РЅР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ РІРЅРёС‡СЊСЋ.");
                 System.exit(0);
             }
 
-            // Создавать случайную часть тела каждые PRODUCTION_TIME milliseconds
+            // РЎРѕР·РґР°РІР°С‚СЊ СЃР»СѓС‡Р°Р№РЅСѓСЋ С‡Р°СЃС‚СЊ С‚РµР»Р° РєР°Р¶РґС‹Рµ PRODUCTION_TIME milliseconds
             int producedPart = rand.nextInt(BODY_PARTS);
             partsOnFactory[producedPart]++;
-            System.out.println("A " + BODY_PART_NAMES[producedPart] + " был произведен.");
+            System.out.println("A " + BODY_PART_NAMES[producedPart] + " Р±С‹Р» РїСЂРѕРёР·РІРµРґРµРЅ.");
 
-            // Каждая страна пытается собрать необходимые детали для сборки робота.
+            // РљР°Р¶РґР°СЏ СЃС‚СЂР°РЅР° РїС‹С‚Р°РµС‚СЃСЏ СЃРѕР±СЂР°С‚СЊ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РґРµС‚Р°Р»Рё РґР»СЏ СЃР±РѕСЂРєРё СЂРѕР±РѕС‚Р°.
             for (int i = 0; i < ARMY_SIZE; i++) {
                 for (int j = 0; j < BODY_PARTS; j++) {
                     while (armies[i][j][0] + armies[i][j][1] < REQUIRED_ROBOTS) {
                         if (partsOnFactory[j] > 0) {
                             armies[i][j][0]++;
                             partsOnFactory[j]--;
-                            System.out.println(COUNTRIES[i] + " собрал " + BODY_PART_NAMES[j] + ".");
+                            System.out.println(COUNTRIES[i] + " СЃРѕР±СЂР°Р» " + BODY_PART_NAMES[j] + ".");
                         } else {
                             break;
                         }
