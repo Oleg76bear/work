@@ -6,14 +6,14 @@ public class RobotPart {
 
     public RobotPart(RobotPartType type) {
         this.type = type;
-        this.creationTime = System.nanoTime(); // устанавливаем текущее время при создании объекта
+        this.creationTime = System.nanoTime(); // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ РїСЂРё СЃРѕР·РґР°РЅРёРё РѕР±СЉРµРєС‚Р°
     }
 
     public RobotPartType getType() {
         return type;
     }
 
-    public long getCreationTime() { // добавляем геттер для поля creationTime
+    public long getCreationTime() { // РґРѕР±Р°РІР»СЏРµРј РіРµС‚С‚РµСЂ РґР»СЏ РїРѕР»СЏ creationTime
         return creationTime;
     }
 
