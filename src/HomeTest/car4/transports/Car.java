@@ -1,71 +1,83 @@
 package HomeTest.car4.transports;
 
-import HomeTest.car4.enums.CarOption;
-import HomeTest.car4.enums.WheelSize;
-import HomeTest.transport.Color;
 
-import java.util.ArrayList;
-import java.util.List;
+import HomeTest.car4.enums.*;
 
-    public class Car {
-        private Color colorCar;
-        private String model;
-        private int year;
-        private double engineVolume;
-        private WheelSize wheelSize;
-        private List<CarOption> options;
+import java.util.HashSet;
+import java.util.Set;
 
+import static java.lang.String.format;
 
-        public Car(Color colorCar, String model, int year, double engineVolume, WheelSize wheelSize, List<CarOption> options) {
-            this.model = model;
-            this.year = year;
-            this.engineVolume = engineVolume;
-            this.wheelSize = wheelSize;
-            this.options = options != null ? options : new ArrayList<>();
-            if (colorCar == null) {
-                colorCar = Color.values()[0];
-            }
-            this.colorCar = colorCar;
-        }
+public class Car {
+    private static final String TO_STRING_TEMPLATE = "Car{year: %s, model: %s, engineVol: %s, color: %s, wheelSize: %s, options: %s}";
 
-        public void changeColor(Color colorCar) {
-            this.colorCar = colorCar;
-        }
+    private final int year;
+    private final Model model;
+    private final EngineVolume engineVolume;
 
-        public void changeWheelSize(WheelSize wheelSize) {
-            this.wheelSize = wheelSize;
-        }
+    private Color color;
+    private WheelSize wheelSize;
+    private Set<Option> options;
 
-        public void addOption(CarOption option) {
-            this.options.add(option);
-        }
-
-        public void removeOption(CarOption option) {
-            this.options.remove(option);
-        }
-
-        @Override
-        public String toString() {
-            String optionsStr = "";
-            for (CarOption option : options) {
-                optionsStr += option.toString() + ", ";
-            }
-            if (!options.isEmpty()) {
-                optionsStr = optionsStr.substring(0, optionsStr.length() - 2);
-            }
-            return String.format("%s %s (%d), %.1fL, %s wheels, Options: %s",
-                    colorCar.getColorCar(), model, year, engineVolume, wheelSize.name(), optionsStr);
-        }
-
-        public Color getColor() {
-            return colorCar;
-        }
-
-        public void setColor(Color color) {
-            this.colorCar = colorCar;
-        }
-
+    public Car(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> options) {
+        this.year = year;
+        this.model = model;
+        this.engineVolume = engineVolume;
+        this.color = color;
+        this.wheelSize = wheelSize;
+        this.options = options != null ? options : new HashSet<>();
     }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public EngineVolume getEngineVolume() {
+        return engineVolume;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public WheelSize getWheelSize() {
+        return wheelSize;
+    }
+
+    public void setWheelSize(WheelSize wheelSize) {
+        this.wheelSize = wheelSize;
+    }
+
+    public Set<Option> getOptions() {
+        return options;
+    }
+
+//    public void setOptions(Set<Option> options) {
+//        this.options = options;
+//    }
+
+    @Override
+    public String toString() {
+        return format(
+                TO_STRING_TEMPLATE,
+                year,
+                model,
+                engineVolume,
+                color,
+                wheelSize,
+                options
+        );
+    }
+
+    public void setOptions(Set<Option> options) {this.options = options;
+    }
+}
+
+
 
 //
 //        public String toString() {
@@ -73,16 +85,16 @@ import java.util.List;
 //            if (!options.isEmpty()) {
 //                optionsString = Arrays.toString(new List[]{options}).replaceAll("\\[|\\]", "");
 //            } else {
-//                optionsString = "нет опций";
+//                optionsString = "РЅРµС‚ РѕРїС†РёР№";
 //            }
 //            return String.format("%s %s (%d), %.1fL, %s wheels, Options: %s",
 //                    colorCar, model, year, engineVolume, wheelSize, optionsString);
 //        }
 //    } TODO
 //        public String toString() {
-//            String optionsString = options == null ? "нет опций" : Arrays.toString(new List[]{options});
-//            return String.format("%s %s (%d), %.1fл, %s, %s", colorCar, model, year, engineVolume, wheelSize, optionsString);
+//            String optionsString = options == null ? "РЅРµС‚ РѕРїС†РёР№" : Arrays.toString(new List[]{options});
+//            return String.format("%s %s (%d), %.1fР», %s, %s", colorCar, model, year, engineVolume, wheelSize, optionsString);
 //        }
-//    } TODO Я головой помотал, но так и не смог в List убрать [[]], кроме как через регулярку.
+//    } TODO РЇ РіРѕР»РѕРІРѕР№ РїРѕРјРѕС‚Р°Р», РЅРѕ С‚Р°Рє Рё РЅРµ СЃРјРѕРі РІ List СѓР±СЂР°С‚СЊ [[]], РєСЂРѕРјРµ РєР°Рє С‡РµСЂРµР· СЂРµРіСѓР»СЏСЂРєСѓ.
 
 

@@ -1,18 +1,18 @@
 package HomeTest.car4.transports;
 
-import HomeTest.car4.enums.CarOption;
-import HomeTest.car4.enums.WheelSize;
-import HomeTest.transport.Color;
 
-import java.util.ArrayList;
+import HomeTest.car4.enums.*;
 
-    public  class SportCar extends Car {
+import java.util.HashSet;
+import java.util.Set;
+
+public  class SportCar extends Car {
         private int maxSpeed;
         private boolean hasRacingStripes;
 
-        public SportCar(Color color, String model, int year, double engineVolume, WheelSize wheelSize, int maxSpeed, boolean hasRacingStripes) {
-            super(color, model, year, engineVolume, wheelSize, new ArrayList<>());
-            addOption(CarOption.CRUISE_CONTROL);
+        public SportCar(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> options, int maxSpeed, boolean hasRacingStripes) {
+            super(year, model, engineVolume, color, wheelSize, new HashSet<>());
+          //  addOption(CarOption.CRUISE_CONTROL);
             this.maxSpeed = maxSpeed;
             this.hasRacingStripes = hasRacingStripes;
         }

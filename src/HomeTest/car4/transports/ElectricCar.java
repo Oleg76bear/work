@@ -1,22 +1,29 @@
 package HomeTest.car4.transports;
 
-import HomeTest.car4.enums.CarOption;
-import HomeTest.car4.enums.WheelSize;
-import HomeTest.transport.Color;
 
-import java.util.ArrayList;
+import HomeTest.car4.enums.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public  class ElectricCar extends Car {
     private int batteryCapacity;
 
-    public ElectricCar(Color colorCar, String model, int year, double engineVolume, WheelSize wheelSize, int batteryCapacity) {
-        super(colorCar, model, year, engineVolume, wheelSize, new ArrayList<>());
-        addOption(CarOption.MAGNITOLA);
+    public ElectricCar(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> options, int batteryCapacity) {
+        super(year, model, engineVolume, color, wheelSize, new HashSet<>());
+        // addOption(Option.MAGNITOLA);
         this.batteryCapacity = batteryCapacity;
     }
+
+
 
     @Override
     public String toString() {
         return String.format("%s, Battery capacity: %dkWh", super.toString(), batteryCapacity);
+    }
+
+
+
+    public void setBatteryCapacity(int i) {
     }
 }

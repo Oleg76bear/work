@@ -1,21 +1,20 @@
 package HomeTest.car4.enums;
 
 public enum Color {
-    WHITE("Белый"),
-    RED("Красный"),
-    GREEN("Зеленый"),
-    ORANGE("Оранжевый"),
-    BLACK("Черный"),
-    VIOLET("Фиолентовый"),
-    YELLOW("Желтый"),
-    BLUE("Синий"),
-    GRAY("Серый");
+    WHITE("Р‘РµР»С‹Р№"),
+    RED("РљСЂР°СЃРЅС‹Р№"),
+    GREEN("Р—РµР»РµРЅС‹Р№"),
+    ORANGE("РћСЂР°РЅР¶РµРІС‹Р№"),
+    BLACK("Р§РµСЂРЅС‹Р№"),
+    VIOLET("Р¤РёРѕР»РµРЅС‚РѕРІС‹Р№"),
+    YELLOW("Р–РµР»С‚С‹Р№"),
+    BLUE("РЎРёРЅРёР№"),
+    GRAY("РЎРµСЂС‹Р№");
 
+    private final String color;
 
-    private final String colorCar;
-
-    Color(String colorCar) {
-        this.colorCar = colorCar;
+    Color(String color) {
+        this.color = color;
     }
-  }
 
+}
